@@ -7,7 +7,7 @@
     tools:context=".Fragment.HomeFragment">
 
     <ScrollView
-        android:id="@+id/scrollView2"
+        android:id="@+id/HomeF_scrollView"
         android:layout_width="0dp"
         android:layout_height="729dp"
         android:layout_marginStart="1dp"
@@ -24,12 +24,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView7"
+                android:id="@+id/textView_HomeF_top"
                 android:layout_width="match_parent"
                 android:layout_height="35dp" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/textView_HomeF_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -37,33 +37,49 @@
                 android:text="请输入您要查找的内容" />
 
             <androidx.viewpager.widget.ViewPager
+                android:id="@+id/ViewPager_HomeF"
                 android:layout_width="match_parent"
                 android:layout_height="157dp"
                 android:background="#82B1FF">
 
             </androidx.viewpager.widget.ViewPager>
 
-            <LinearLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="match_parent">
 
                 <Button
-                    android:id="@+id/button2"
-                    android:layout_width="200dp"
-                    android:layout_height="match_parent"
-                    android:text="Button" />
+                    android:id="@+id/button_HomeF_search"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+
+                    android:layout_marginStart="32dp"
+                    android:layout_marginEnd="96dp"
+                    android:background="@drawable/search5"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/button_HomeF_publish"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/button3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="82dp"
-                    android:layout_weight="1"
-                    android:text="Button" />
-            </LinearLayout>
+                    android:id="@+id/button_HomeF_publish"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+
+
+                    android:layout_marginStart="96dp"
+                    android:layout_marginEnd="32dp"
+                    android:background="@drawable/publish3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/button_HomeF_search"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/homeF_recyclerView"
+                android:id="@+id/recyclerView_homeF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 

@@ -6,19 +6,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-
 import com.example.shiwu.Fragment.HomeFragment;
 import com.example.shiwu.Fragment.KindFragment;
 import com.example.shiwu.Fragment.MesFragment;
 import com.example.shiwu.Fragment.MyFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {

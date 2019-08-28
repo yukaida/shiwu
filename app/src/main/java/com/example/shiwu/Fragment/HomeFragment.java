@@ -26,7 +26,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void initView(){
-        recyclerView = getView().findViewById(R.id.homeF_recyclerView);
+        recyclerView = getView().findViewById(R.id.recyclerView_homeF);
     }
 
 
