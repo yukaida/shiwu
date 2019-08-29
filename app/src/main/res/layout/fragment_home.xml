@@ -37,7 +37,7 @@
                 android:text="请输入您要查找的内容" />
 
             <androidx.viewpager.widget.ViewPager
-                android:id="@+id/ViewPager_HomeF"
+                android:id="@+id/viewPager_HomeF"
                 android:layout_width="match_parent"
                 android:layout_height="157dp"
                 android:background="#82B1FF">
