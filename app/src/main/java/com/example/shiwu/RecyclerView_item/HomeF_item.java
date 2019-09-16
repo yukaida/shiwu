@@ -3,44 +3,55 @@ package com.example.shiwu.RecyclerView_item;
 import java.util.Objects;
 
 public class HomeF_item {
-    int name;
-    int data;
+    private String name;
+    private int image;
+    private String describe;
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public int getData() {
-        return data;
+    public int getImage() {
+        return image;
     }
 
-    public void setData(int data) {
-        this.data = data;
+    public void setImage(int image) {
+        this.image = image;
+    }
+
+    public String getDescribe() {
+        return describe;
+    }
+
+    public void setDescribe(String describe) {
+        this.describe = describe;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        HomeF_item that = (HomeF_item) o;
-        return name == that.name &&
-                data == that.data;
+        HomeF_item item = (HomeF_item) o;
+        return name == item.name &&
+                image == item.image &&
+                Objects.equals(describe, item.describe);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, data);
+        return Objects.hash(name, image, describe);
     }
 
     @Override
     public String toString() {
         return "HomeF_item{" +
                 "name=" + name +
-                ", data=" + data +
+                ", image=" + image +
+                ", describe='" + describe + '\'' +
                 '}';
     }
 }

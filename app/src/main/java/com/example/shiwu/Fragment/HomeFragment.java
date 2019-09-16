@@ -2,6 +2,7 @@ package com.example.shiwu.Fragment;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,12 +12,15 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.shiwu.Adapter.adapter_recyclerView_home;
 import com.example.shiwu.MainActivity;
 import com.example.shiwu.R;
+import com.example.shiwu.RecyclerView_item.HomeF_item;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,13 +30,19 @@ public class HomeFragment extends Fragment {
     private ViewPager viewPager;
     private View view;
     private List<View> viewPagerlist = new ArrayList<>();
-
+    private List<HomeF_item> recyclerViewlist = new ArrayList<>();
+    private static final String TAG = "HomeFragment";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_home, container, false);
         initView();
         initViewPager_item();
+        initRecyclerView_item();
+        Log.d(TAG, "onCreateView: "+recyclerViewlist);//测试
+        recyclerView.setAdapter(new adapter_recyclerView_home(recyclerViewlist));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
         viewPager.setAdapter(new PagerAdapter() {
             @Override
             public int getCount() {
@@ -87,5 +97,13 @@ public class HomeFragment extends Fragment {
         }
     }
 
-
+    private void initRecyclerView_item(){
+        for (int i = 0; i < 10; i++) {
+            HomeF_item homeF_item = new HomeF_item();
+            homeF_item.setImage(R.drawable.ic_launcher_background);
+            homeF_item.setName("things"+i);
+            homeF_item.setDescribe("这是一件丢失的物品");
+            recyclerViewlist.add(homeF_item);
+        }
+    }
 }
