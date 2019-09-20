@@ -12,14 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.shiwu.R;
 import com.example.shiwu.RecyclerView_item.HomeF_item;
 
-import org.w3c.dom.Text;
-
 import java.util.List;
 
-public class adapter_recyclerView_home extends RecyclerView.Adapter<adapter_recyclerView_home.ViewHolder> {
+public class Adapter_recyclerView_home extends RecyclerView.Adapter<Adapter_recyclerView_home.ViewHolder> {
     private List<HomeF_item> list;
 
-    public adapter_recyclerView_home(List<HomeF_item> list) {
+    public Adapter_recyclerView_home(List<HomeF_item> list) {
         super();
         this.list = list;
     }

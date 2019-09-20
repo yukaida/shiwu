@@ -6,7 +6,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -17,8 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.shiwu.Adapter.adapter_recyclerView_home;
-import com.example.shiwu.MainActivity;
+import com.example.shiwu.Adapter.Adapter_recyclerView_home;
 import com.example.shiwu.R;
 import com.example.shiwu.RecyclerView_item.HomeF_item;
 
@@ -40,7 +38,7 @@ public class HomeFragment extends Fragment {
         initViewPager_item();
         initRecyclerView_item();
         Log.d(TAG, "onCreateView: "+recyclerViewlist);//测试
-        recyclerView.setAdapter(new adapter_recyclerView_home(recyclerViewlist));
+        recyclerView.setAdapter(new Adapter_recyclerView_home(recyclerViewlist));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         viewPager.setAdapter(new PagerAdapter() {
@@ -104,6 +102,7 @@ public class HomeFragment extends Fragment {
             homeF_item.setName("things"+i);
             homeF_item.setDescribe("这是一件丢失的物品");
             recyclerViewlist.add(homeF_item);
+
         }
     }
 }
