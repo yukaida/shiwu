@@ -39,9 +39,9 @@ public class KindFragment extends Fragment {
     }
 
     void initList() {
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 30; i++) {
             KindF_item item = new KindF_item();
-            item.setImage(R.drawable.ic_launcher_background);
+            item.setImage(R.drawable.get);
             item.setName("测试" + i);
             list.add(item);
         }

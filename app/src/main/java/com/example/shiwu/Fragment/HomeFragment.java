@@ -78,19 +78,20 @@ public class HomeFragment extends Fragment {
         {
             View view = View.inflate(getContext(), R.layout.fragment_home_viewpager_item, null);
             ImageView imageView = view.findViewById(R.id.imageView_homeF_viewpager);
-            imageView.setBackgroundColor(Color.RED);
+            imageView.setImageResource(R.drawable.home_page1);
+
             viewPagerlist.add(view);
         }
         {
             View view = View.inflate(getContext(), R.layout.fragment_home_viewpager_item, null);
             ImageView imageView = view.findViewById(R.id.imageView_homeF_viewpager);
-            imageView.setBackgroundColor(Color.GREEN);
+            imageView.setImageResource(R.drawable.home_page2);
             viewPagerlist.add(view);
         }
         {
             View view = View.inflate(getContext(), R.layout.fragment_home_viewpager_item, null);
             ImageView imageView = view.findViewById(R.id.imageView_homeF_viewpager);
-            imageView.setBackgroundColor(Color.BLUE);
+            imageView.setImageResource(R.drawable.home_page3);
             viewPagerlist.add(view);
         }
     }
@@ -98,7 +99,7 @@ public class HomeFragment extends Fragment {
     private void initRecyclerView_item(){
         for (int i = 0; i < 10; i++) {
             HomeF_item homeF_item = new HomeF_item();
-            homeF_item.setImage(R.drawable.ic_launcher_background);
+            homeF_item.setImage(R.drawable.home_item);
             homeF_item.setName("things"+i);
             homeF_item.setDescribe("这是一件丢失的物品");
             recyclerViewlist.add(homeF_item);

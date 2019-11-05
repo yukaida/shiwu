@@ -33,14 +33,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
                 android:gravity="center"
                 android:text="请输入您要查找的内容" />
 
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPager_HomeF"
                 android:layout_width="match_parent"
-                android:layout_height="157dp"
-                android:background="#82B1FF">
+                android:layout_height="167dp"
+                android:background="#80D8FF">
 
             </androidx.viewpager.widget.ViewPager>
 
@@ -54,10 +55,12 @@
                     android:layout_height="60dp"
 
                     android:layout_marginStart="32dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="96dp"
-                    android:background="@drawable/search5"
+                    android:background="@drawable/lost"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/button_HomeF_publish"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -68,13 +71,35 @@
 
 
                     android:layout_marginStart="96dp"
+                    android:layout_marginTop="16dp"
                     android:layout_marginEnd="32dp"
-                    android:background="@drawable/publish3"
+                    android:background="@drawable/get"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/button_HomeF_search"
+                    app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.0" />
+
+                <TextView
+                    android:id="@+id/textView_HomeF_get"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发布捡到"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/button_HomeF_publish"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView_HomeF_lost"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发布丢失"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/button_HomeF_search"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

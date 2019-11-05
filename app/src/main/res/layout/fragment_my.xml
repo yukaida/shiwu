@@ -7,40 +7,70 @@
 
     <ImageView
         android:id="@+id/MyF_imageView_icon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="29dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginBottom="448dp"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/ic_launcher_round" />
+        app:srcCompat="@drawable/touxiang1" />
 
-    <TextView
-        android:id="@+id/MyF_textView_name"
+    <Switch
+        android:id="@+id/MyF_switch_msgsound"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="user_name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="63dp"
+        android:text="消息提示音"
+        app:layout_constraintStart_toStartOf="@+id/MyF_switch_showQQ"
+        app:layout_constraintTop_toBottomOf="@+id/MyF_switch_showQQ" />
 
-    <TextView
-        android:id="@+id/MyF_textView_phone"
+    <Switch
+        android:id="@+id/MyF_switch_"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:text="user_phone"
-        app:layout_constraintEnd_toEndOf="@+id/MyF_textView_name"
-        app:layout_constraintStart_toStartOf="@+id/MyF_textView_name"
-        app:layout_constraintTop_toBottomOf="@+id/MyF_textView_name" />
+        android:layout_marginTop="64dp"
+        android:text="震动             "
+        app:layout_constraintStart_toStartOf="@+id/MyF_switch_msgsound"
+        app:layout_constraintTop_toBottomOf="@+id/MyF_switch_msgsound" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/MyF_recyclerView"
-        android:layout_width="0dp"
+    <Switch
+        android:id="@+id/MyF_switch_showQQ"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/MyF_textView_phone" />
+        android:layout_marginTop="63dp"
+        android:text="显示QQ号  "
+        app:layout_constraintStart_toStartOf="@+id/MyF_textView_qq"
+        app:layout_constraintTop_toBottomOf="@+id/MyF_textView_qq" />
+
+    <TextView
+        android:id="@+id/MyF_textView_qq"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
+        android:text="1204799167"
+        app:layout_constraintStart_toStartOf="@+id/MyF_imageView_icon"
+        app:layout_constraintTop_toBottomOf="@+id/MyF_imageView_icon" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="30dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/maozhua"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/MyF_switch_"
+        app:layout_constraintTop_toBottomOf="@+id/MyF_imageView_icon" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="140dp"
+        android:text="退出账号"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/button3"
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
