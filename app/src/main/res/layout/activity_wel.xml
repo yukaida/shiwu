@@ -4,11 +4,5 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.WelActivity">
-
-    <ImageView
-        android:id="@+id/welActivity_imageView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:srcCompat="@drawable/welpage" />
-</LinearLayout>
+    android:background="@drawable/welpage"
+    tools:context=".Activity.WelActivity"/>

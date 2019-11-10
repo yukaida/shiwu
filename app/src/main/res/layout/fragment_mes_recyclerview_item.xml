@@ -7,8 +7,8 @@
     <TextView
         android:id="@+id/MesF_textView"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:gravity="center"
+        android:layout_height="60dp"
+        android:gravity="start|center_vertical"
         android:text="测试专用" />
 
 </LinearLayout>

@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.shiwu.Fragment.HomeFragment;
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     private BottomNavigationView bottomNavigationView;
     private FragmentManager manager=getSupportFragmentManager();
     private long firstTime;// 记录点击返回时第一次的时间毫秒值
+    private String qq;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +43,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
 
         initView();
         replaceFragment(new HomeFragment()); //启动时用HomeFragment替换掉空Fragment
+
+        Intent intent = getIntent();
+         qq = intent.getStringExtra("qq");
+
+
     }
 
     public void initView() {
@@ -46,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView.setOnNavigationItemSelectedListener(this);//设置导航栏监听器
         bottomNavigationView.setSelectedItemId(R.id.tab_one);//设置默认选择的导航栏子项tab_one即首页
         bottomNavigationView.setItemIconTintList(null);//取消导航栏子项图片的颜色覆盖
+
     }
 
     @Override
@@ -66,7 +76,11 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 menuItem.setChecked(true);
                 break;
             case R.id.tab_four:
-                replaceFragment(new MyFragment());
+                MyFragment myFragment = new MyFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("qq", qq);
+                myFragment.setArguments(bundle);
+                replaceFragment(myFragment);
                 menuItem.setChecked(true);
                 break;
         }

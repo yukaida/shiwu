@@ -20,7 +20,7 @@ public class WelActivity extends AppCompatActivity {
         public void handleMessage(@NonNull Message msg) {
             super.handleMessage(msg);
             if (msg.what ==1) {
-                Intent intent = new Intent(WelActivity.this, MainActivity.class);
+                Intent intent = new Intent(WelActivity.this, LoginActivity.class);
                 startActivity(intent);
                 finish();
             }

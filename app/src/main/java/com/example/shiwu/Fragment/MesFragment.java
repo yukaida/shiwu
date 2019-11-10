@@ -34,9 +34,21 @@ public class MesFragment extends Fragment {
     }
 
     private void initList() {
-        for (int i = 0; i < 15; i++) {
-            String s = "消息测试专用";
-            list.add(s);
-        }
+
+            String s1 = "  新增物品招领 校园卡";
+            list.add(s1);
+
+            String s2 = "  新增物品招领 黑色书包";
+            list.add(s2);
+
+            String s3 = "  新增物品招领 数学课本";
+            list.add(s3);
+
+            String s4 = "  用户须知";
+            list.add(s4);
+
+            String s5 = "  注册成功啦 快来看看附近捡到了哪些东西吧";
+            list.add(s5);
+
     }
 }
