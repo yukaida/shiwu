@@ -1,5 +1,6 @@
 package com.example.shiwu.Fragment;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -16,12 +18,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.shiwu.Activity.ADActivity;
 import com.example.shiwu.Adapter.Adapter_recyclerView_home;
 import com.example.shiwu.R;
 import com.example.shiwu.RecyclerView_item.HomeF_item;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 
 public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
@@ -30,6 +35,7 @@ public class HomeFragment extends Fragment {
     private List<View> viewPagerlist = new ArrayList<>();
     private List<HomeF_item> recyclerViewlist = new ArrayList<>();
     private static final String TAG = "HomeFragment";
+    private PtrClassicFrameLayout mPtrClassicFrameLayout2;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -40,7 +46,6 @@ public class HomeFragment extends Fragment {
         Log.d(TAG, "onCreateView: "+recyclerViewlist);//测试
         recyclerView.setAdapter(new Adapter_recyclerView_home(recyclerViewlist));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
         viewPager.setAdapter(new PagerAdapter() {
             @Override
             public int getCount() {
@@ -56,6 +61,20 @@ public class HomeFragment extends Fragment {
             @Override
             public Object instantiateItem(@NonNull ViewGroup container, int position) {
                 container.addView(viewPagerlist.get(position));
+
+                View  view = viewPagerlist.get(position);
+                view.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Log.d(TAG, "onClick: " + v.getId());
+                        Intent intent = new Intent(getActivity(), ADActivity.class);
+
+                        intent.putExtra("address", "https://mp.weixin.qq.com/s/2DQ_j7nRwjfn85rotGoXbA");
+                        startActivity(intent);
+
+                    }
+                });
+
                 return viewPagerlist.get(position);
             }
 
@@ -65,7 +84,6 @@ public class HomeFragment extends Fragment {
 
             }
         });
-
         return view;
     }
 
@@ -83,16 +101,16 @@ public class HomeFragment extends Fragment {
             viewPagerlist.add(view);
         }
         {
-            View view = View.inflate(getContext(), R.layout.fragment_home_viewpager_item, null);
-            ImageView imageView = view.findViewById(R.id.imageView_homeF_viewpager);
+            View view1 = View.inflate(getContext(), R.layout.fragment_home_viewpager_item, null);
+            ImageView imageView = view1.findViewById(R.id.imageView_homeF_viewpager);
             imageView.setImageResource(R.drawable.home_page2);
-            viewPagerlist.add(view);
+            viewPagerlist.add(view1);
         }
         {
-            View view = View.inflate(getContext(), R.layout.fragment_home_viewpager_item, null);
-            ImageView imageView = view.findViewById(R.id.imageView_homeF_viewpager);
+            View view2 = View.inflate(getContext(), R.layout.fragment_home_viewpager_item, null);
+            ImageView imageView = view2.findViewById(R.id.imageView_homeF_viewpager);
             imageView.setImageResource(R.drawable.home_page3);
-            viewPagerlist.add(view);
+            viewPagerlist.add(view2);
         }
     }
 

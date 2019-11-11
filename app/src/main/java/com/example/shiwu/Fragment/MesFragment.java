@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,10 +19,15 @@ import com.example.shiwu.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import in.srain.cube.views.ptr.PtrClassicFrameLayout;
+import in.srain.cube.views.ptr.PtrDefaultHandler;
+import in.srain.cube.views.ptr.PtrFrameLayout;
+import in.srain.cube.views.ptr.PtrHandler;
+
 public class MesFragment extends Fragment {
     private RecyclerView recyclerView;
     private List<String> list = new ArrayList();
-
+    private PtrClassicFrameLayout mPtrClassicFrameLayout;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -30,6 +36,28 @@ public class MesFragment extends Fragment {
         recyclerView = view.findViewById(R.id.MesF_recyclerView);
         recyclerView.setAdapter(new Adapter_recyclerView_Mes(list));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+        mPtrClassicFrameLayout =  view.findViewById(R.id.store_house_ptr_frame);//下拉刷新
+        mPtrClassicFrameLayout.setPtrHandler(new PtrHandler() {
+            @Override
+            public void onRefreshBegin(PtrFrameLayout frame) {
+                frame.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        mPtrClassicFrameLayout.refreshComplete();
+                        Toast.makeText(getContext(), "还没有新消息哦", Toast.LENGTH_SHORT).show();
+                        mPtrClassicFrameLayout.setLastUpdateTimeKey("2017-2-10");
+                    }
+                }, 2000);
+            }
+
+            @Override
+            public boolean checkCanDoRefresh(PtrFrameLayout frame, View content, View header) {
+                return PtrDefaultHandler.checkContentCanBePulledDown(frame, content, header);
+            }
+        });
+
         return view;
     }
 
@@ -51,4 +79,6 @@ public class MesFragment extends Fragment {
             list.add(s5);
 
     }
+
+
 }
