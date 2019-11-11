@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -53,6 +54,17 @@ public class Adapter_recyclerView_home extends RecyclerView.Adapter<Adapter_recy
             imageView = itemView.findViewById(R.id.imageView_HomeF_rv);
             textView_name = itemView.findViewById(R.id.textView_HomeF_rv_name);
             textView_describe = itemView.findViewById(R.id.textView_HomeF_rv_describe);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(v.getContext(), "子项被点击", Toast.LENGTH_SHORT).show();
+                }
+            });
+
         }
+
+
+
     }
 }

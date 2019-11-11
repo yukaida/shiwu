@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -46,6 +47,13 @@ public class Adapter_recyclerView_kind extends RecyclerView.Adapter<Adapter_recy
             super(itemView);
             imageView = itemView.findViewById(R.id.kindF_imageView);
             textView = itemView.findViewById(R.id.kindF_textView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(v.getContext(), "子项被点击", Toast.LENGTH_SHORT).show();
+                }
+            });
         }
     }
 
