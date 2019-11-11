@@ -39,11 +39,36 @@ public class KindFragment extends Fragment {
     }
 
     void initList() {
-        for (int i = 0; i < 30; i++) {
-            KindF_item item = new KindF_item();
-            item.setImage(R.drawable.get);
-            item.setName("测试" + i);
-            list.add(item);
-        }
+
+        KindF_item item = new KindF_item();
+        item.setImage(R.drawable.kind_xiaoyuanka);
+        item.setName("校园卡");
+        list.add(item);
+
+        KindF_item item1 = new KindF_item();
+        item1.setImage(R.drawable.kind_shuika);
+        item1.setName("水卡");
+        list.add(item1);
+
+        KindF_item item2 = new KindF_item();
+        item2.setImage(R.drawable.kind_shenfenzhen);
+        item2.setName("身份证");
+        list.add(item2);
+
+        KindF_item item3 = new KindF_item();
+        item3.setImage(R.drawable.kind_shouji);
+        item3.setName("手机");
+        list.add(item3);
+
+        KindF_item item4 = new KindF_item();
+        item4.setImage(R.drawable.kind_xiaoyugan);
+        item4.setName("小鱼干");
+        list.add(item4);
+
+        KindF_item item5 = new KindF_item();
+        item5.setImage(R.drawable.kind_qita);
+        item5.setName("其他");
+        list.add(item5);
+
     }
 }

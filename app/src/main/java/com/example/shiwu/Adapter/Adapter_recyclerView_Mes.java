@@ -39,9 +39,11 @@ public class Adapter_recyclerView_Mes extends RecyclerView.Adapter<Adapter_recyc
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView textView;
+        View view;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             textView = itemView.findViewById(R.id.MesF_textView);
+            view = itemView.findViewById(R.id.view_fenge);
         }
     }
 
