@@ -26,7 +26,6 @@ import com.example.shiwu.RecyclerView_item.HomeF_item;
 import java.util.ArrayList;
 import java.util.List;
 
-import in.srain.cube.views.ptr.PtrClassicFrameLayout;
 
 public class HomeFragment extends Fragment {
     private RecyclerView recyclerView;
@@ -35,7 +34,6 @@ public class HomeFragment extends Fragment {
     private List<View> viewPagerlist = new ArrayList<>();
     private List<HomeF_item> recyclerViewlist = new ArrayList<>();
     private static final String TAG = "HomeFragment";
-    private PtrClassicFrameLayout mPtrClassicFrameLayout2;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

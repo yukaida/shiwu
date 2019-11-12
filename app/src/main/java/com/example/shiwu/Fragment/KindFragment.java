@@ -32,7 +32,7 @@ public class KindFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_kind, container, false);
         initList();
         recyclerView = view.findViewById(R.id.kindF_recyclerView);
-        recyclerView.setAdapter(new Adapter_recyclerView_kind(list));
+        recyclerView.setAdapter(new Adapter_recyclerView_kind(getContext(),list));
         recyclerView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
 
         return view;
