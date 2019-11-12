@@ -1,15 +1,17 @@
 package com.example.shiwu.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.shiwu.Activity.LostShowActivity;
 import com.example.shiwu.R;
 import com.example.shiwu.RecyclerView_item.HomeF_item;
 
@@ -17,10 +19,13 @@ import java.util.List;
 
 public class Adapter_recyclerView_home extends RecyclerView.Adapter<Adapter_recyclerView_home.ViewHolder> {
     private List<HomeF_item> list;
+    private Context context;
 
-    public Adapter_recyclerView_home(List<HomeF_item> list) {
+    public Adapter_recyclerView_home(Context context,List<HomeF_item>list) {
+
         super();
         this.list = list;
+        this.context = context;
     }
 
     @NonNull
@@ -58,7 +63,8 @@ public class Adapter_recyclerView_home extends RecyclerView.Adapter<Adapter_recy
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(v.getContext(), "子项被点击", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(context, LostShowActivity.class);
+                    context.startActivity(intent);
                 }
             });
 

@@ -1,14 +1,13 @@
 package com.example.shiwu.Fragment;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,6 +18,7 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.shiwu.Activity.ADActivity;
+import com.example.shiwu.Activity.PostLostActivity;
 import com.example.shiwu.Adapter.Adapter_recyclerView_home;
 import com.example.shiwu.R;
 import com.example.shiwu.RecyclerView_item.HomeF_item;
@@ -26,14 +26,22 @@ import com.example.shiwu.RecyclerView_item.HomeF_item;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+
 
 public class HomeFragment extends Fragment {
+    @BindView(R.id.button_HomeF_publish)
+    Button buttonHomeFPublish;
+    @BindView(R.id.button_HomeF_search)
+    Button buttonHomeFSearch;
     private RecyclerView recyclerView;
     private ViewPager viewPager;
     private View view;
     private List<View> viewPagerlist = new ArrayList<>();
     private List<HomeF_item> recyclerViewlist = new ArrayList<>();
     private static final String TAG = "HomeFragment";
+
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -41,8 +49,18 @@ public class HomeFragment extends Fragment {
         initView();
         initViewPager_item();
         initRecyclerView_item();
-        Log.d(TAG, "onCreateView: "+recyclerViewlist);//测试
-        recyclerView.setAdapter(new Adapter_recyclerView_home(recyclerViewlist));
+        Log.d(TAG, "onCreateView: " + recyclerViewlist);//测试
+
+        buttonHomeFSearch = view.findViewById(R.id.button_HomeF_search);
+        buttonHomeFSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), PostLostActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        recyclerView.setAdapter(new Adapter_recyclerView_home(getContext(),recyclerViewlist));
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         viewPager.setAdapter(new PagerAdapter() {
             @Override
@@ -60,7 +78,7 @@ public class HomeFragment extends Fragment {
             public Object instantiateItem(@NonNull ViewGroup container, int position) {
                 container.addView(viewPagerlist.get(position));
 
-                View  view = viewPagerlist.get(position);
+                View view = viewPagerlist.get(position);
                 view.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -112,14 +130,19 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    private void initRecyclerView_item(){
+    private void initRecyclerView_item() {
+
+
+
         for (int i = 0; i < 10; i++) {
             HomeF_item homeF_item = new HomeF_item();
             homeF_item.setImage(R.drawable.home_item);
-            homeF_item.setName("things"+i);
+            homeF_item.setName("things" + i);
             homeF_item.setDescribe("这是一件丢失的物品");
             recyclerViewlist.add(homeF_item);
 
         }
     }
+
+
 }

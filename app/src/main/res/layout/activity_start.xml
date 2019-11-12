@@ -8,6 +8,25 @@
     tools:context=".Activity.StartActivity">
 
 
+    <com.moos.library.CircleProgressView
+        android:id="@+id/progressView_circle"
+        android:layout_width="240dp"
+        android:layout_height="240dp"
+        android:visibility="invisible"
+
+        app:circleBroken="true"
+        app:end_color="#40C4FF"
+        app:end_progress="60"
+        app:isTracked="true"
+        app:layout_constraintBottom_toTopOf="@+id/editText_account2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.894"
+        app:start_color="#304FFE"
+        app:start_progress="0"
+        app:track_width="26dp" />
+
     <Button
         android:id="@+id/button_signin2"
         android:layout_width="80dp"

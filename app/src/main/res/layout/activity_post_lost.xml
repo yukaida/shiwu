@@ -6,4 +6,67 @@
     android:layout_height="match_parent"
     tools:context=".Activity.PostLostActivity">
 
+    <ImageView
+        android:id="@+id/imageView_post"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="47dp"
+        app:layout_constraintBottom_toTopOf="@+id/editText_post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tianjia" />
+
+    <EditText
+        android:id="@+id/editText_post"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="31dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="添加物品描述"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/progressView_horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_post" />
+
+
+    <com.moos.library.HorizontalProgressView
+        android:id="@+id/progressView_horizontal"
+        android:layout_width="322dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="14dp"
+        app:corner_radius="12dp"
+        app:end_color="@color/red_end"
+        app:textMovedEnable="true"
+        app:end_progress="60"
+        app:isTracked="true"
+        app:layout_constraintBottom_toTopOf="@+id/button_post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_post"
+        app:progressTextColor="#696969"
+        app:start_color="@color/red_start"
+        app:trackColor="#f4f4f4"
+        app:track_width="12dp" />
+
+    <Button
+        android:id="@+id/button_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:background="@drawable/shape_button2"
+        android:text="发布"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressView_horizontal" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,7 +19,7 @@
         <activity android:name=".Activity.KindofThingsActivity"></activity>
         <activity android:name=".Activity.ADActivity" />
         <activity android:name=".Activity.PostLostActivity" />
-        <activity android:name=".Activity.PostGetActivity" />
+        <activity android:name=".Activity.LostShowActivity" />
         <activity android:name=".Activity.LoginActivity" />
         <activity android:name=".Activity.StartActivity" />
         <activity android:name=".MainActivity" />
