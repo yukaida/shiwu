@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="20dp" />
+    <!--    定义圆角度数-->
+    <solid android:color="#40C4FF" />
+    <!--    定义填充颜色-->
+
+    <!--    文件名 shape_button 对应第一个按钮圆角效果-->
+</shape>
